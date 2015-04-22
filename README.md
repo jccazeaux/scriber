@@ -36,6 +36,12 @@ Creates a child element with same rules.
 ## Element.<attributeName>(&lt;String&gt; value) or Element.attr(&lt;String&gt; name, &lt;String&gt; value)
 Creates an attribute on the element. You can use either a shortcut function or generic element() function
 
+## Element.toString()
+Return the element as a String
+
+## Element.toHTMLElement()
+Return the element as HTMLElement object
+
 # Shortcut methods
 ## For tags
 Scriber supports shortcuts for the following tags
@@ -52,4 +58,4 @@ Scriber supports shortcuts for the following tags
 Scriber supports shortcuts for the following attributes
 ```Javascript
 ["alt", "diabled", "href", "src", "style", "title", "value", "name", "id", "class"]
-```
+``

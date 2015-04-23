@@ -11,7 +11,7 @@ scriber
 			.value("my value")
 		.end()
 		.element("span")
-		.style("color:red")
+		.class("red")
 		.end()
 	.end()
 	.toString
@@ -21,7 +21,7 @@ scriber
 Produces
 
 ```html
-<div id="myId" class="my-css-class"><input value="my value"><span style="color:red"></span></div>
+<div id="myId" class="my-css-class"><input value="my value"><span style="red"></span></div>
 ```
 
 # api
@@ -33,8 +33,16 @@ This function will return an "Element" object to work on the new created element
 ## Element.&lt;tagName&gt;() or Element.element(&lt;tagName&gt;)
 Creates a child element with same rules.
 
+This function returns the created element. To close this element, use the end function.
+
+## Element.end()
+Ends the current element. Returns the parent element.
+
 ## Element.<attributeName>(&lt;String&gt; value) or Element.attr(&lt;String&gt; name, &lt;String&gt; value)
 Creates an attribute on the element. You can use either a shortcut function or generic element() function
+
+## Element.text(&lt;String&gt; value)
+Adds a text node. No need to end a text node as it does not accept children.
 
 ## Element.toString()
 Return the element as a String
@@ -55,7 +63,7 @@ Scriber supports shortcuts for the following tags
 "td","textarea","tfoot","th","thead","time","title","tr","track","tt","u","ul","var","video","wbr"]
 ```
 ## For attributes
-Scriber supports shortcuts for the following attributes
+Scriber supports shortcuts for the following attributes. The style attribute has no shortcut because the style method already handles the style tag. If you really want to add a style attribute (instead of class), use the generic attr("style") method.
 ```Javascript
-["alt", "diabled", "href", "src", "style", "title", "value", "name", "id", "class"]
+["alt", "diabled", "href", "src", "title", "value", "name", "id", "class"]
 ``

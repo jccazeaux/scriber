@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 
     jasmine: {
       tests: {
-        src: ['lib/scriber.js'],
+        src: ['src/scriber.js'],
         options: {
           specs: 'tests/*Spec.js'
         }

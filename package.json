@@ -11,7 +11,7 @@
     "mocha-phantomjs": "^4.0.2"
   },
   "scripts": {
-    "pretest": "build",
+    "pretest": "npm run build",
     "test": "mocha-phantomjs specs/runner.html",
     "build": "webpack"
   }

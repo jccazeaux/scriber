@@ -30,7 +30,7 @@ function Element(_type) {
 	this.element = function(type) {
 		var elem = new Element(type);
 		elem.parent = this;
-		elements.push(elem);
+		//elements.push(elem);
 		return elem;
 	};
 

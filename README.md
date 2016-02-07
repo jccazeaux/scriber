@@ -1,3 +1,5 @@
+![Travis CI](https://travis-ci.org/jccazeaux/scriber.svg?branch=master)
+
 # scriber
 A tiny framework to write easily HTML code in javascript
 

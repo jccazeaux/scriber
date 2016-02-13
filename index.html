@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Scriber by jccazeaux</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Scriber</h1>
+          <h2>A tiny framework to write easily HTML code in javascript</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/jccazeaux/scriber/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/jccazeaux/scriber/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/jccazeaux/scriber" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <p><img src="https://travis-ci.org/jccazeaux/scriber.svg?branch=master" alt="Travis CI"></p>
+
+<h1>
+<a id="scriber" class="anchor" href="#scriber" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>scriber</h1>
+
+<p>A tiny framework to write easily HTML code in javascript</p>
+
+<h1>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h1>
+
+<ul>
+<li>Download the <a href="https://github.com/jccazeaux/scriber/releases/download/v0.1.0/scriber.min.js">latest release</a>.</li>
+<li>Clone the repo: <code>git clone https://github.com/jccazeaux/scriber.git</code>.</li>
+<li>Install with npm: <code>npm install scriber-js</code>.</li>
+</ul>
+
+<h1>
+<a id="syntax" class="anchor" href="#syntax" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Syntax</h1>
+
+<div class="highlight highlight-source-js"><pre>scriber
+    .<span class="pl-en">div</span>()
+        .<span class="pl-c1">id</span>(<span class="pl-s"><span class="pl-pds">"</span>myId<span class="pl-pds">"</span></span>)
+        .<span class="pl-en">class</span>(<span class="pl-s"><span class="pl-pds">"</span>my-css-class<span class="pl-pds">"</span></span>)
+        .<span class="pl-c1">input</span>()
+            .<span class="pl-c1">value</span>(<span class="pl-s"><span class="pl-pds">"</span>my value<span class="pl-pds">"</span></span>)
+        .<span class="pl-en">end</span>()
+        .<span class="pl-en">element</span>(<span class="pl-s"><span class="pl-pds">"</span>span<span class="pl-pds">"</span></span>)
+        .<span class="pl-en">class</span>(<span class="pl-s"><span class="pl-pds">"</span>red<span class="pl-pds">"</span></span>)
+        .<span class="pl-en">end</span>()
+    .<span class="pl-en">end</span>()
+    .<span class="pl-smi">toString</span>
+</pre></div>
+
+<p>Produces</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>myId<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>my-css-class<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">input</span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>my value<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">span</span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">"</span>red<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<h1>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>api</h1>
+
+<h2>
+<a id="scribertagname-or-scriberelementtagname" class="anchor" href="#scribertagname-or-scriberelementtagname" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>scriber.&lt;tagName&gt;() or scriber.Element(&lt;tagName&gt;)</h2>
+
+<p>Creates the root element. You can use generic "element" function with will take the tagName as parameter, or a shortcut function wich name will be the tagName.</p>
+
+<p>This function will return an "Element" object to work on the new created element</p>
+
+<h2>
+<a id="elementtagname-or-elementelementtagname" class="anchor" href="#elementtagname-or-elementelementtagname" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Element.&lt;tagName&gt;() or Element.element(&lt;tagName&gt;)</h2>
+
+<p>Creates a child element with same rules.</p>
+
+<p>This function returns the created element. To close this element, use the end function.</p>
+
+<h2>
+<a id="elementend" class="anchor" href="#elementend" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Element.end()</h2>
+
+<p>Ends the current element. Returns the parent element.</p>
+
+<h2>
+<a id="elementstring-value-or-elementattrstring-name-string-value" class="anchor" href="#elementstring-value-or-elementattrstring-name-string-value" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Element.(&lt;String&gt; value) or Element.attr(&lt;String&gt; name, &lt;String&gt; value)</h2>
+
+<p>Creates an attribute on the element. You can use either a shortcut function or generic element() function</p>
+
+<h2>
+<a id="elementtextstring-value" class="anchor" href="#elementtextstring-value" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Element.text(&lt;String&gt; value)</h2>
+
+<p>Adds a text node. No need to end a text node as it does not accept children.</p>
+
+<h2>
+<a id="elementtostring" class="anchor" href="#elementtostring" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Element.toString()</h2>
+
+<p>Return the element as a String</p>
+
+<h2>
+<a id="elementtohtmlelement" class="anchor" href="#elementtohtmlelement" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Element.toHTMLElement()</h2>
+
+<p>Return the element as HTMLElement object</p>
+
+<h1>
+<a id="shortcut-methods" class="anchor" href="#shortcut-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Shortcut methods</h1>
+
+<h2>
+<a id="for-tags" class="anchor" href="#for-tags" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For tags</h2>
+
+<p>Scriber supports shortcuts for the following tags</p>
+
+<div class="highlight highlight-source-js"><pre>[<span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>abbr<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>acronym<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>address<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>applet<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>area<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>article<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>aside<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>audio<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>base<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>basefont<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>bdi<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>bdo<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>big<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>blockquote<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>body<span class="pl-pds">"</span></span>,
+<span class="pl-s"><span class="pl-pds">"</span>br<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>button<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>canvas<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>caption<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>center<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>cite<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>code<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>col<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>colgroup<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>datalist<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>dd<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>del<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>details<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>dfn<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>dialog<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>dir<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>div<span class="pl-pds">"</span></span>,
+<span class="pl-s"><span class="pl-pds">"</span>dl<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>dt<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>em<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>embed<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>fieldset<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>figcaption<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>figure<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>font<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>footer<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>form<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>frame<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>frameset<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>h1<span class="pl-pds">"</span></span>,<span class="pl-k">-</span> <span class="pl-s"><span class="pl-pds">"</span>h6<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>head<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>header<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>hr<span class="pl-pds">"</span></span>,
+<span class="pl-s"><span class="pl-pds">"</span>html<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>i<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>iframe<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>img<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>input<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ins<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>kbd<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>keygen<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>label<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>legend<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>li<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>link<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>main<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>map<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>mark<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>menu<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>menuitem<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>meta<span class="pl-pds">"</span></span>,
+<span class="pl-s"><span class="pl-pds">"</span>meter<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>nav<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>noframes<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>noscript<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>object<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ol<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>optgroup<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>option<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>output<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>p<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>param<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>pre<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>progress<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>q<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>rp<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>rt<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ruby<span class="pl-pds">"</span></span>,
+<span class="pl-s"><span class="pl-pds">"</span>s<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>samp<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>script<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>section<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>select<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>small<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>source<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>span<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>strike<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>strong<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>style<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>sub<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>summary<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>sup<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>table<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>tbody<span class="pl-pds">"</span></span>,
+<span class="pl-s"><span class="pl-pds">"</span>td<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>textarea<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>tfoot<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>th<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>thead<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>time<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>tr<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>track<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>tt<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>u<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ul<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>var<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>video<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>wbr<span class="pl-pds">"</span></span>]</pre></div>
+
+<h2>
+<a id="for-attributes" class="anchor" href="#for-attributes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For attributes</h2>
+
+<p>Scriber supports shortcuts for the following attributes. The style attribute has no shortcut because the style method already handles the style tag. If you really want to add a style attribute (instead of class), use the generic attr("style") method.</p>
+
+<div class="highlight highlight-source-js"><pre>[<span class="pl-s"><span class="pl-pds">"</span>alt<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>diabled<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>href<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>src<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>value<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>class<span class="pl-pds">"</span></span>]
+<span class="pl-s"><span class="pl-pds">`</span><span class="pl-pds">`</span></span></pre></div>
+        </section>
+
+        <footer>
+          Scriber is maintained by <a href="https://github.com/jccazeaux">jccazeaux</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>

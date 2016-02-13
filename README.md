@@ -3,6 +3,13 @@
 # scriber
 A tiny framework to write easily HTML code in javascript
 
+# Installation
+
+* Download the [latest release](https://github.com/jccazeaux/scriber/releases/download/v0.1.0/scriber.min.js).
+* Clone the repo: `git clone https://github.com/jccazeaux/scriber.git`.
+* Install with npm: `npm install scriber-js`.
+
+
 # Syntax
 ```Javascript
 scriber

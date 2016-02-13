@@ -1,6 +1,8 @@
 {
   "name": "scriber",
   "version": "0.1.0",
+  "main": "./dist/scriber.min.js",
+  "license": "MIT",
   "devDependencies": {
     "webpack": "^1.12.13",
     "babel-core": "^6.4.5",
@@ -11,7 +13,6 @@
     "mocha-phantomjs": "^4.0.2"
   },
   "scripts": {
-    "pretest": "npm run build",
     "test": "mocha-phantomjs specs/runner.html",
     "build": "webpack"
   }

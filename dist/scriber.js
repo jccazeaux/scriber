@@ -1,5 +1,5 @@
 /*!
- * scriber - 0.1.0 https://github.com/jccazeaux/Jacks
+ * scriber - 0.1.0 https://github.com/jccazeaux/scriber
  *  Copyright (c) 2015 Jean-Christophe Cazeaux.
  *  Licensed under the MIT license.
  * 
@@ -92,7 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		this.element = function (type) {
 			var elem = new Element(type);
 			elem.parent = this;
-			//elements.push(elem);
+			elements.push(elem);
 			return elem;
 		};
 

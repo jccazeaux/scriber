@@ -1,5 +1,5 @@
 {
-  "name": "scriber",
+  "name": "scriber-js",
   "version": "0.1.0",
   "main": "./dist/scriber.min.js",
   "license": "MIT",
